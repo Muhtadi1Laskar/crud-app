@@ -5,7 +5,7 @@ export const updateProduct = async (req, res) => {
         const { id } = req.params;
         const updates = req.body;
 
-        const product = await Product.findByIdAndUpdate(id, updates, { new: true }); // Update with options
+        const product = await Product.findByIdAndUpdate(id, updates, { new: true });
 
         if (!product) {
             return res.status(404).json({ message: "Product not found" });
