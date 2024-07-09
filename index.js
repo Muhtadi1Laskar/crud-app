@@ -10,6 +10,7 @@ const PORT = process.env.PORT || 8080;
 const uri = process.env.URI;
 
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 app.use('/api/products', getRouter);
 app.use('/api/products', postRouter);
 app.use('/api/products', putRouter);
