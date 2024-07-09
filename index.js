@@ -17,6 +17,16 @@ app.get('/api/products', async (req, res) => {
     }
 });
 
+app.get('/api/products/:id', async (req, res) => {
+    try {
+        const { id } = req.params;
+        const products = await Product.findById(id);
+        res.status(200).json(products);
+    } catch (error) {
+        res.status(404).json({ message: error.message });
+    }
+})
+
 app.post('/api/products', async (req, res) => {
     try {
         const product = await Product.create(req.body);
