@@ -1,6 +1,7 @@
 import express from 'express';
 import mongoose from 'mongoose';
-import router from './routes/getProductsRoute.js';
+import getRouter from './routes/getProductsRoute.js';
+import postRouter from './routes/postProductRoute.js';
 import Product from './models/product.model.js';
 
 const app = express();
@@ -8,7 +9,8 @@ const PORT = process.env.PORT || 8080;
 const uri = process.env.URI;
 
 app.use(express.json());
-app.use('/api/products', router);
+app.use('/api/products', getRouter);
+app.use('/api/products', postRouter);
 
 
 
