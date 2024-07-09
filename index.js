@@ -3,6 +3,7 @@ import mongoose from 'mongoose';
 import getRouter from './routes/getProductsRoute.js';
 import postRouter from './routes/postProductRoute.js';
 import putRouter from './routes/putProductRoute.js';
+import deleteRouter from './routes/deleteProductRoute.js';
 
 const app = express();
 const PORT = process.env.PORT || 8080;
@@ -12,6 +13,7 @@ app.use(express.json());
 app.use('/api/products', getRouter);
 app.use('/api/products', postRouter);
 app.use('/api/products', putRouter);
+app.use('/api/products', deleteRouter);
 
 
 mongoose.connect(uri)
