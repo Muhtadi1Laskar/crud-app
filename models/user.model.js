@@ -13,9 +13,13 @@ const UserSchema = mongoose.Schema({
         type: String,
         required: [true, "Please Enter the Date of Birth"]
     },
+    password: {
+        type: String,
+        required: [true, "Please set a Password"]
+    },
     uniqueID: {
         type: Number,
-        required: true
+        required: false
     }
 }, {
     timestamps: true
