@@ -18,8 +18,9 @@ const UserSchema = mongoose.Schema({
         required: [true, "Please set a Password"]
     },
     uniqueID: {
-        type: Number,
-        required: false
+        type: String,
+        required: false,
+        unique: true
     }
 }, {
     timestamps: true
